@@ -1,0 +1,61 @@
+---
+
+- name: Get latest version
+  when: gitlab_cli_version == 'latest'
+  block:
+
+    - name: Get all tags from Gitlab API
+      ansible.builtin.uri:
+        url: "{{ (gitlab_cli_api + '/repository/tags') }}"
+      check_mode: no
+      run_once: yes
+      register: gitlab_cli_version_info
+
+    - name: Get latest tag
+      ansible.builtin.set_fact:
+        __gitlab_cli_version: >-
+          {{ gitlab_cli_version_info.json | json_query('[].name') | first | regex_replace('^v') }}
+
+    - name: Show latest tag
+      ansible.builtin.debug:
+        msg:
+          gitlab_cli_version: "{{ __gitlab_cli_version }}"
+
+    - name: Set version to the correct setting
+      ansible.builtin.set_fact:
+        gitlab_cli_version: "{{ __gitlab_cli_version }}"
+
+- name: Install package (RedHat family)
+  ansible.builtin.yum:
+    name: "{{ gitlab_cli_url }}"
+    state: present
+    disable_gpg_check: true
+  when: ansible_os_family == 'RedHat'
+
+- name: Install package (Suse family)
+  community.general.zypper:
+    name: "{{ gitlab_cli_url }}"
+    state: present
+    disable_gpg_check: true
+  when: ansible_os_family == 'Suse'
+
+- name: Install package (Debian family)
+  ansible.builtin.apt:
+    deb: "{{ gitlab_cli_url }}"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Install package (Alpine family)
+  when: ansible_os_family == 'Alpine'
+  block:
+
+    - name: Download APK
+      ansible.builtin.get_url:
+        url: "{{ gitlab_cli_url }}"
+        dest: /tmp/{{ gitlab_cli_url | basename }}
+        mode: "0600"
+
+    - name: Install APK
+      community.general.apk:
+        name: /tmp/{{ gitlab_cli_url | basename }}
+        state: present

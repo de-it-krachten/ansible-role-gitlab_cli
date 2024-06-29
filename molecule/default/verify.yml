@@ -1,0 +1,16 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Get status of glab binary
+      ansible.builtin.stat:
+        path: /usr/bin/glab
+      register: __glab_executable
+
+    - name: Fail if it does not exists
+      ansible.builtin.fail:
+        msg: "File '/usr/bin/glab' could not be found!"
+      when: not __glab_executable.stat.exists
