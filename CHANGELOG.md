@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.0.1...v1.1.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([7dacbb0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/7dacbb0e3db7d26c29b5eddbb67019db1df829d7))
+
 ## [1.0.1](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.0.0...v1.0.1) (2024-11-10)
 
 
