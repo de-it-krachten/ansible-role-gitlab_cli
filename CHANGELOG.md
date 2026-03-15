@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.2.0...v1.3.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([2a68a7b](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/2a68a7b1cb0c3de22fdcb4968c178d3a9d1c3dbb))
+* Drop support for Fedora 41 ([671bdb2](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/671bdb22276a1cbb5200faccbda6d1ff9d24e793))
+* Drop support for openSUSE Leap 15 ([dbe8aa4](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/dbe8aa4b583d0f791b2cf01d5aecfcbb8d603f60))
+* Drop support for SUSE Linux Enterprise 15 ([136a2d6](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/136a2d6f9601eee3f296edca904927a882f6895c))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.1.0...v1.2.0) (2025-08-07)
 
 
