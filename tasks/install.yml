@@ -30,23 +30,23 @@
     name: "{{ gitlab_cli_url }}"
     state: present
     disable_gpg_check: true
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts.os_family == 'RedHat'
 
 - name: Install package (Suse family)
   community.general.zypper:
     name: "{{ gitlab_cli_url }}"
     state: present
     disable_gpg_check: true
-  when: ansible_os_family == 'Suse'
+  when: ansible_facts.os_family == 'Suse'
 
 - name: Install package (Debian family)
   ansible.builtin.apt:
     deb: "{{ gitlab_cli_url }}"
     state: present
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts.os_family == 'Debian'
 
 - name: Install package (Alpine family)
-  when: ansible_os_family == 'Alpine'
+  when: ansible_facts.os_family == 'Alpine'
   block:
 
     - name: Download APK
