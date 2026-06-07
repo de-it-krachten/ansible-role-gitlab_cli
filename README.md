@@ -37,8 +37,9 @@ Supported platforms
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- Fedora 42
+- Ubuntu 26.04 LTS
 - Fedora 43
+- Fedora 44<sup>1</sup>
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -77,7 +78,7 @@ gitlab_cli_package:
 
 # Package download link
 gitlab_cli_url: >-
-  {{ gitlab_cli_repo }}/-/releases/v{{ gitlab_cli_version }}/downloads/{{ gitlab_cli_package[ansible_os_family] }}
+  {{ gitlab_cli_repo }}/-/releases/v{{ gitlab_cli_version }}/downloads/{{ gitlab_cli_package[ansible_facts.os_family] }}
 </pre></code>
 
 
