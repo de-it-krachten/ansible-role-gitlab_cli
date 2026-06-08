@@ -71,10 +71,10 @@ gitlab_cli:
 
 # Package name by OS family
 gitlab_cli_package:
-  RedHat: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.rpm
-  Suse: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.rpm
-  Debian: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.deb
-  Alpine: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.apk
+  RedHat: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.rpm
+  Suse: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.rpm
+  Debian: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.deb
+  Alpine: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.apk
 
 # Package download link
 gitlab_cli_url: >-
