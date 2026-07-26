@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.3.0...v1.4.0) (2026-07-26)
+
+
+### Features
+
+* Add support for ansible-core 2.20+ ([5addc34](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/5addc344594c69f5f493b136cf7f9d6ea4c983fb))
+* Added support for Fedora 44 ([9b2ff8e](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/9b2ff8eb296ddb6fa34b6cbce3a91260ea0cee37))
+* Added support for Ubuntu 26.04 LTS ([50b547d](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/50b547db53a93f055bb9efd9520f8836a37dc1ab))
+* Drop support for Fedora 42 ([23e6761](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/23e6761310410fd9ce7487a15e37068e3fcf6de9))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.2.0...v1.3.0) (2026-03-15)
 
 
