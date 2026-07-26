@@ -37,8 +37,9 @@ Supported platforms
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- Fedora 42
+- Ubuntu 26.04 LTS
 - Fedora 43
+- Fedora 44<sup>1</sup>
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -70,14 +71,14 @@ gitlab_cli:
 
 # Package name by OS family
 gitlab_cli_package:
-  RedHat: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.rpm
-  Suse: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.rpm
-  Debian: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.deb
-  Alpine: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_system] }}_{{ gitlab_cli['architecture'][ansible_architecture] }}.apk
+  RedHat: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.rpm
+  Suse: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.rpm
+  Debian: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.deb
+  Alpine: glab_{{ gitlab_cli_version }}_{{ gitlab_cli['system'][ansible_facts.system] }}_{{ gitlab_cli['architecture'][ansible_facts.architecture] }}.apk
 
 # Package download link
 gitlab_cli_url: >-
-  {{ gitlab_cli_repo }}/-/releases/v{{ gitlab_cli_version }}/downloads/{{ gitlab_cli_package[ansible_os_family] }}
+  {{ gitlab_cli_repo }}/-/releases/v{{ gitlab_cli_version }}/downloads/{{ gitlab_cli_package[ansible_facts.os_family] }}
 </pre></code>
 
 
