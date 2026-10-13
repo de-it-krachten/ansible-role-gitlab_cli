@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.4.0...v1.5.0) (2026-10-13)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([93834b9](https://github.com/de-it-krachten/ansible-role-gitlab_cli/commit/93834b98527e1e8394beebc920d8f6d4f53dae5f))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-gitlab_cli/compare/v1.3.0...v1.4.0) (2026-07-26)
 
 
